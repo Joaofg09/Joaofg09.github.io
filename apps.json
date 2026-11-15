@@ -28,5 +28,15 @@
     "privacidade": "https://joaofg09.github.io/bora-cnh-site/privacidade.html",
     "play": null,
     "status": "em breve"
+  },
+  {
+    "slug": "plantelo",
+    "nome": "Plantelo",
+    "descricao": "Tire uma foto e descubra a planta: cuidados, lembrete de rega e alerta para pets.",
+    "icone": "https://joaofg09.github.io/plantelo-site/icone.png",
+    "site": "https://joaofg09.github.io/plantelo-site/",
+    "privacidade": "https://joaofg09.github.io/plantelo-site/privacidade.html",
+    "play": null,
+    "status": "em breve"
   }
 ]
