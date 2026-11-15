@@ -8,5 +8,15 @@
     "privacidade": "https://joaofg09.github.io/mana-diario-site/privacidade.html",
     "play": null,
     "status": "em breve"
+  },
+  {
+    "slug": "horta-do-foco",
+    "nome": "Horta do Foco",
+    "descricao": "Timer Pomodoro para estudar com foco: cada ciclo faz a sua horta crescer.",
+    "icone": "https://joaofg09.github.io/horta-do-foco-site/icone.png",
+    "site": "https://joaofg09.github.io/horta-do-foco-site/",
+    "privacidade": "https://joaofg09.github.io/horta-do-foco-site/privacidade.html",
+    "play": null,
+    "status": "em breve"
   }
 ]
