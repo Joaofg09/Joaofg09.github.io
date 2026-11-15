@@ -18,5 +18,15 @@
     "privacidade": "https://joaofg09.github.io/horta-do-foco-site/privacidade.html",
     "play": null,
     "status": "em breve"
+  },
+  {
+    "slug": "bora-cnh",
+    "nome": "Bora CNH",
+    "descricao": "Flashcards e simulado da prova do Detran para estudar em 5 minutos.",
+    "icone": "https://joaofg09.github.io/bora-cnh-site/icone.png",
+    "site": "https://joaofg09.github.io/bora-cnh-site/",
+    "privacidade": "https://joaofg09.github.io/bora-cnh-site/privacidade.html",
+    "play": null,
+    "status": "em breve"
   }
 ]
