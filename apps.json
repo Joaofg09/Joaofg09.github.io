@@ -38,5 +38,21 @@
     "privacidade": "https://joaofg09.github.io/plantelo-site/privacidade.html",
     "play": null,
     "status": "em breve"
+  },
+  {
+    "slug": "torpedo",
+    "nome": "Torpedo!",
+    "descricao": "Batalha naval contra o computador ou com alguém do lado, até sem internet.",
+    "icone": "https://joaofg09.github.io/torpedo-site/icone.png",
+    "site": "https://joaofg09.github.io/torpedo-site/",
+    "privacidade": "https://joaofg09.github.io/torpedo-site/privacidade.html",
+    "play": null,
+    "status": "em breve",
+    "tipo": "jogo",
+    "tema": {
+      "de": "#0E3560",
+      "para": "#06182B",
+      "acento": "#FF8A3D"
+    }
   }
 ]

@@ -8,3 +8,5 @@ Página: https://joaofg09.github.io/
   da Play Store e troque `status` para `"disponível"`.
 - Cada app tem o próprio repositório de site (`<slug>-site`) com a sua política de privacidade.
 - Quando houver anúncios, o arquivo `app-ads.txt` do AdMob fica na raiz deste repositório.
+- Campos opcionais para jogos: `"tipo": "jogo"` deixa o cartão com visual de jogo (selo 🎮 JOGO) e
+  `"tema": {"de": "#RRGGBB", "para": "#RRGGBB", "acento": "#RRGGBB"}` escolhe as cores do degradê e do destaque.

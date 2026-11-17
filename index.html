@@ -35,6 +35,26 @@
   .principal { background:var(--marca); color:var(--marca-texto); }
   .secundario { background:var(--chip); color:var(--texto); }
   .vazio { text-align:center; color:var(--suave); }
+  /* Cartão especial para jogos (campo "tipo": "jogo" e "tema" opcional no apps.json). */
+  .app.jogo { position:relative; overflow:hidden; color:#F2F7FF; border:2px solid var(--j-acento);
+              background:radial-gradient(120% 90% at 100% 0%, color-mix(in srgb, var(--j-acento) 30%, transparent), transparent 55%),
+                         linear-gradient(160deg, var(--j-de), var(--j-para));
+              box-shadow:0 14px 34px -14px color-mix(in srgb, var(--j-acento) 70%, transparent); transition:transform .2s ease; }
+  .app.jogo:hover { transform:translateY(-3px); }
+  .app.jogo::before { content:""; position:absolute; inset:0; pointer-events:none;
+              background-image:linear-gradient(rgba(255,255,255,.07) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.07) 1px, transparent 1px);
+              background-size:22px 22px; -webkit-mask-image:linear-gradient(to bottom, transparent, #000 75%); mask-image:linear-gradient(to bottom, transparent, #000 75%); }
+  .app.jogo::after { content:""; position:absolute; left:0; right:0; bottom:0; height:28px; pointer-events:none; opacity:.35;
+              background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 28' preserveAspectRatio='none'%3E%3Cpath d='M0 14 Q15 4 30 14 T60 14 T90 14 T120 14 V28 H0Z' fill='%23A9D6FF'/%3E%3C/svg%3E") repeat-x; background-size:120px 28px; }
+  .app.jogo > * { position:relative; z-index:1; }
+  .app.jogo h2 { color:#FFFFFF; }
+  .app.jogo p { color:#C9DBEE; }
+  .app.jogo .topo img { background:#0B2A4A; box-shadow:0 0 0 2px rgba(255,255,255,.15), 0 8px 20px -6px var(--j-acento); }
+  .app.jogo .status { background:rgba(255,255,255,.12); color:#FFD166; }
+  .selo-jogo { display:inline-block; margin:4px 0 0 6px; font-size:.75rem; font-weight:800; letter-spacing:1px; padding:2px 10px;
+               border-radius:999px; background:var(--j-acento); color:#2A1300; }
+  .app.jogo .principal { background:var(--j-acento); color:#2A1300; box-shadow:0 4px 0 rgba(0,0,0,.35); }
+  .app.jogo .secundario { background:rgba(255,255,255,.12); color:#F2F7FF; }
   footer { text-align:center; color:var(--suave); font-size:.9rem; padding:24px 16px 48px; }
   footer a { color:var(--marca); }
 </style>
@@ -61,10 +81,14 @@
       if (!apps.length) { el.innerHTML = '<p class="vazio">Em breve, novos apps por aqui.</p>'; return; }
       el.innerHTML = apps.map((a) => {
         const disponivel = a.play && a.status === 'disponível';
-        return `<article class="app">
+        const jogo = a.tipo === 'jogo';
+        const cor = (c, padrao) => /^#[0-9a-fA-F]{6}$/.test(c || '') ? c : padrao;
+        const t = a.tema || {};
+        const estilo = jogo ? ` style="--j-de:${cor(t.de, '#0E3560')};--j-para:${cor(t.para, '#06182B')};--j-acento:${cor(t.acento, '#FF8A3D')}"` : '';
+        return `<article class="app${jogo ? ' jogo' : ''}"${estilo}>
           <div class="topo">
             <img src="${esc(a.icone)}" alt="" loading="lazy">
-            <div><h2>${esc(a.nome)}</h2><span class="status${disponivel ? ' disponivel' : ''}">${disponivel ? 'Disponível na Google Play' : 'Em breve'}</span></div>
+            <div><h2>${esc(a.nome)}</h2><span class="status${disponivel ? ' disponivel' : ''}">${disponivel ? 'Disponível na Google Play' : 'Em breve'}</span>${jogo ? '<span class="selo-jogo">🎮 JOGO</span>' : ''}</div>
           </div>
           <p>${esc(a.descricao)}</p>
           <div class="acoes">
